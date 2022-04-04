@@ -1,0 +1,54 @@
+(pyOperatingSystems) williamnoonan@Williams-MBP pyOperatingSystems % cd ContiguousMemoryAllocation 
+(pyOperatingSystems) williamnoonan@Williams-MBP ContiguousMemoryAllocation % python ContiguousMemoryAllocation.py 1000
+allocator>STAT
+Addresses [0:999] Unused
+allocator>RQ P1 100 W
+allocator>STAT
+Addresses [0:99] Process P1
+Addresses [100:999] Unused
+allocator>RQ P2 100 F
+allocator>STAT
+Addresses [0:99] Process P1
+Addresses [100:199] Process P2
+Addresses [200:999] Unused
+allocator>RL P1
+allocator>STAT
+Addresses [0:99] Unused
+Addresses [100:199] Process P2
+Addresses [200:999] Unused
+allocator>RQ P3 200 B
+allocator>STAT
+Addresses [0:99] Unused
+Addresses [100:199] Process P2
+Addresses [200:399] Process P3
+Addresses [400:999] Unused
+allocator>RQ P4 10 W
+allocator>STAT
+Addresses [0:99] Unused
+Addresses [100:199] Process P2
+Addresses [200:399] Process P3
+Addresses [400:409] Process P4
+Addresses [410:999] Unused
+allocator>RQ P5 10 B
+allocator>STAT
+Addresses [0:9] Process P5
+Addresses [10:99] Unused
+Addresses [100:199] Process P2
+Addresses [200:399] Process P3
+Addresses [400:409] Process P4
+Addresses [410:999] Unused
+allocator>RL P2
+allocator>STAT
+Addresses [0:9] Process P5
+Addresses [10:199] Unused
+Addresses [200:399] Process P3
+Addresses [400:409] Process P4
+Addresses [410:999] Unused
+allocator>C
+allocator>STAT
+Addresses [0:9] Process P5
+Addresses [10:209] Process P3
+Addresses [210:219] Process P4
+Addresses [220:999] Unused
+allocator>X
+(pyOperatingSystems) williamnoonan@Williams-MBP ContiguousMemoryAllocation % 
