@@ -21,7 +21,7 @@ Author: William Noonan
 
 class Block:
     """
-    Represents a contiguous memory block, either free or allocated
+    Represents a memory block, either free or allocated
     """
     def __init__(self, start_address: int, end_address: int, ID: str):
         self.start = start_address
@@ -361,4 +361,4 @@ def main():
 
 
 if __name__ == "__main__":
-    testing()
+    main()
